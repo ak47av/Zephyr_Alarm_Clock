@@ -1,0 +1,24 @@
+&i2c0 {
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3C>;
+        height = <64>;
+        width = <128>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        prechargep = <0x22>;
+        com-invdir;
+        segment-remap;
+    };
+};
+
+/{
+    buttons {
+    compatible = "gpio-keys";
+    snooze_button: snooze_button {
+        gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
+        };
+    };
+};
